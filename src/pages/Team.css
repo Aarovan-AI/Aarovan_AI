@@ -1,0 +1,335 @@
+.team-hero {
+  padding: 6rem 0 4rem;
+}
+.team-hero h1 {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.team-hero p {
+  font-size: 1.2rem;
+  color: var(--on-surface-variant);
+  max-width: 42rem;
+  line-height: 1.7;
+}
+
+/* ═══ Team Grid ═══ */
+.team-grid-section {
+  background: var(--surface-container-low);
+  padding: 6rem 0;
+}
+.team-bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .team-bento {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .t-col-8 { grid-column: span 8; }
+  .t-col-6 { grid-column: span 6; }
+  .t-col-4 { grid-column: span 4; }
+  .t-col-12 { grid-column: span 12; }
+}
+
+/* Lead Card */
+.team-lead-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(1.8);
+  -webkit-backdrop-filter: blur(40px) saturate(1.8);
+  border-radius: 1.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12),
+              0 0 0 1px var(--glass-border) inset,
+              0 0 40px rgba(255, 107, 53, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-lead-card:hover {
+  box-shadow: 0 16px 56px rgba(31, 38, 135, 0.18),
+              0 0 0 1.5px var(--glass-border-hover) inset,
+              0 0 60px rgba(255, 107, 53, 0.15);
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-strong);
+  transform: translateY(-2px);
+}
+@media (min-width: 768px) {
+  .team-lead-card {
+    flex-direction: row;
+  }
+}
+.team-lead-image {
+  position: relative;
+  min-height: 25rem;
+}
+@media (min-width: 768px) {
+  .team-lead-image {
+    width: 50%;
+  }
+}
+.team-lead-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.team-lead-image .glass-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  padding: 0.4rem 0.875rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(255, 140, 97, 0.9) 100%);
+  color: var(--on-accent-orange);
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.4);
+}
+.team-lead-info {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .team-lead-info {
+    width: 50%;
+  }
+}
+.team-lead-info h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.team-lead-info .role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+.team-lead-info .divider {
+  width: 3rem;
+  height: 1px;
+  background: var(--primary-fixed-dim);
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+}
+.team-lead-info p {
+  color: var(--on-surface-variant);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.team-lead-info .social-icons {
+  display: flex;
+  gap: 1rem;
+}
+.team-lead-info .social-icons .material-symbols-outlined {
+  color: var(--primary-container);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.team-lead-info .social-icons .material-symbols-outlined:hover {
+  opacity: 0.6;
+}
+
+/* Philosophy Card */
+.team-philosophy-card {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 50%, var(--accent-orange-dark) 100%);
+  border-radius: 1.75rem;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  min-height: 20rem;
+  box-shadow: 0 0 40px rgba(255, 107, 53, 0.2);
+}
+.team-philosophy-card .blur-circle {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  width: 8rem;
+  height: 8rem;
+  background: var(--primary);
+  opacity: 0.2;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+.team-philosophy-card .material-symbols-outlined {
+  color: var(--accent-orange-light);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.4));
+}
+.team-philosophy-card h3 {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.5rem;
+  color: var(--on-accent-orange);
+  margin-bottom: 1rem;
+}
+.team-philosophy-card p {
+  color: var(--on-primary-container);
+  line-height: 1.7;
+}
+
+/* Member Cards */
+.team-member-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(1.8);
+  -webkit-backdrop-filter: blur(40px) saturate(1.8);
+  border-radius: 1.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12),
+              0 0 0 1px var(--glass-border) inset,
+              0 0 40px rgba(255, 107, 53, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 56px rgba(31, 38, 135, 0.18),
+              0 0 0 1.5px var(--glass-border-hover) inset,
+              0 0 60px rgba(255, 107, 53, 0.15);
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-strong);
+}
+.team-member-image {
+  height: 20rem;
+  position: relative;
+  overflow: hidden;
+}
+.team-member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.team-member-card:hover .team-member-image img {
+  transform: scale(1.05);
+}
+.team-member-image .badge-circle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(255, 140, 97, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.4);
+}
+
+.team-member-image .badge-circle .material-symbols-outlined {
+  color: var(--on-accent-orange);
+  font-size: 1.5rem;
+}
+.team-member-info {
+  padding: 2.5rem;
+}
+.team-member-info h2 {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.team-member-info .role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+.team-member-info p {
+  color: var(--on-surface-variant);
+  line-height: 1.7;
+}
+
+/* ═══ Progress Thread ═══ */
+.team-progress {
+  background: var(--surface);
+  padding: 5rem 0;
+  border-top: 1px solid rgba(194, 199, 205, 0.1);
+}
+.team-progress-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .team-progress-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.team-progress-text {
+  max-width: 28rem;
+}
+.team-progress-text h3 {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.team-progress-text p {
+  color: var(--on-surface-variant);
+}
+.team-progress-bar {
+  flex: 1;
+  max-width: 32rem;
+  width: 100%;
+}
+.thread-track {
+  height: 4px;
+  width: 100%;
+  background: var(--surface-container-highest);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+.thread-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-orange) 0%, #00ffff 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+}
+.thread-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--on-surface-variant);
+}
+
+
