@@ -168,7 +168,7 @@ export default function Contact() {
               <div className="contact-quote glass-panel">
                 <span className="material-symbols-outlined bg-deco">school</span>
                 <blockquote>
-                  "The Digital Scholar represents the union of AI precision and pedagogical excellence."
+                  Whether you're a student, institution, or partner — Aarovan.ai helps improve interview communication and readiness.
                 </blockquote>
                 <div className="attribution">— Engineering Excellence Division</div>
               </div>

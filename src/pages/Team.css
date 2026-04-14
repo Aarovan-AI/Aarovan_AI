@@ -1,5 +1,6 @@
 .team-hero {
   padding: 6rem 0 4rem;
+  text-align: center;
 }
 .team-hero h1 {
   font-family: 'Noto Serif', serif;
@@ -12,12 +13,6 @@
   line-height: 1.1;
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
-}
-.team-hero p {
-  font-size: 1.2rem;
-  color: var(--on-surface-variant);
-  max-width: 42rem;
-  line-height: 1.7;
 }
 
 /* ═══ Team Grid ═══ */
@@ -150,8 +145,8 @@
   opacity: 0.6;
 }
 
-/* Philosophy Card */
-.team-philosophy-card {
+/* Mentorship Card */
+.team-mentorship-card {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 50%, var(--accent-orange-dark) 100%);
   border-radius: 1.75rem;
   padding: 2.5rem;
@@ -163,7 +158,7 @@
   min-height: 20rem;
   box-shadow: 0 0 40px rgba(255, 107, 53, 0.2);
 }
-.team-philosophy-card .blur-circle {
+.team-mentorship-card .blur-circle {
   position: absolute;
   top: -2rem;
   right: -2rem;
@@ -174,19 +169,26 @@
   border-radius: 50%;
   filter: blur(60px);
 }
-.team-philosophy-card .material-symbols-outlined {
+.team-mentorship-card .material-symbols-outlined {
   color: var(--accent-orange-light);
   font-size: 3rem;
   margin-bottom: 1.5rem;
   filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.4));
 }
-.team-philosophy-card h3 {
+.team-mentorship-card h3 {
   font-family: 'Noto Serif', serif;
   font-size: 1.5rem;
   color: var(--on-accent-orange);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
-.team-philosophy-card p {
+.team-mentorship-card .mentorship-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.team-mentorship-card p {
   color: var(--on-primary-container);
   line-height: 1.7;
 }
@@ -217,12 +219,14 @@
 .team-member-image {
   height: 20rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  padding-top: 2rem;
 }
 .team-member-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center top;
   transition: transform 0.5s ease;
 }
 .team-member-card:hover .team-member-image img {
@@ -270,66 +274,32 @@
   line-height: 1.7;
 }
 
-/* ═══ Progress Thread ═══ */
+/* ═══ Validation Section ═══ */
 .team-progress {
   background: var(--surface);
   padding: 5rem 0;
   border-top: 1px solid rgba(194, 199, 205, 0.1);
 }
-.team-progress-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
+.team-validation {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
 }
-@media (min-width: 768px) {
-  .team-progress-inner {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-.team-progress-text {
-  max-width: 28rem;
-}
-.team-progress-text h3 {
+.team-validation h3 {
   font-family: 'Noto Serif', serif;
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
 }
-.team-progress-text p {
+.team-validation p {
   color: var(--on-surface-variant);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
 }
-.team-progress-bar {
-  flex: 1;
-  max-width: 32rem;
-  width: 100%;
-}
-.thread-track {
-  height: 4px;
-  width: 100%;
-  background: var(--surface-container-highest);
-  border-radius: 999px;
-  overflow: hidden;
-  position: relative;
-}
-.thread-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent-orange) 0%, #00ffff 100%);
-  border-radius: 999px;
-  box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
-}
-.thread-labels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-  font-size: 0.625rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--on-surface-variant);
+.team-validation p:last-child {
+  margin-bottom: 0;
 }
 
 

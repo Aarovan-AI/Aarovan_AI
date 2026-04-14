@@ -2,12 +2,6 @@ import { Link } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 import './About.css';
 
-const approachSteps = [
-  { title: 'Understand current level', desc: 'Identify where the student stands.', pulse: true },
-  { title: 'Practice with AI interviews', desc: 'Simulate real interview scenarios.' },
-  { title: 'Improve with feedback', desc: 'Get clear, actionable suggestions.' },
-];
-
 export default function About() {
   return (
     <main>
@@ -17,102 +11,247 @@ export default function About() {
         <div className="container">
           <AnimatedSection>
             <div className="content">
-              <span className="tag">About Us</span>
-              <h1>Helping Students Become Interview-Ready</h1>
-              <p>Aarovan.ai helps students practice real interviews and improve through structured feedback.</p>
+              <h1>Bridging the Gap Between Knowledge and Communication</h1>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Problem ── */}
-      <section className="about-mission">
+      {/* ── Background ── */}
+      <section className="about-background">
         <div className="container">
-          <div className="about-mission-grid">
-            <AnimatedSection direction="left">
-              <div className="mission-card editorial-shadow ghost-border">
-                <span className="material-symbols-outlined">problem</span>
-                <h2>The Problem</h2>
-                <div className="mission-card-text">
-                  <p>Most engineering students know the concepts, but struggle in interviews.</p>
-                  <p>They don't know:</p>
-                  <ul style={{ marginLeft: '1.5rem', marginTop: '1rem' }}>
-                    <li>how to structure answers</li>
-                    <li>how to communicate clearly</li>
-                    <li>how to perform under pressure</li>
-                  </ul>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection direction="right" delay={200}>
-              <div className="mission-side">
-                <div className="mission-side-card ghost-border">
-                  <h3>What We Do</h3>
-                  <p>Aarovan.ai helps students practice real interviews and improve through structured feedback.</p>
-                </div>
-                <div className="mission-side-card ghost-border">
-                  <h3>Students Can</h3>
-                  <ul style={{ marginLeft: '1.5rem', marginTop: '0.5rem' }}>
-                    <li>Simulate interviews</li>
-                    <li>Understand mistakes</li>
-                    <li>Improve with each attempt</li>
-                  </ul>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
+          <AnimatedSection>
+            <div className="background-header">
+              <h2>BACKGROUND</h2>
+              <p>
+                The education system is designed to build knowledge and technical capability at scale.
+              </p>
+              <p>
+                India's engineering ecosystem produces one of the largest talent pipelines globally. However, employability outcomes indicate that knowledge alone is not sufficient.
+              </p>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Our Approach ── */}
-      <section className="about-journey">
+      {/* ── Core Challenge ── */}
+      <section className="about-challenge">
         <div className="container">
           <AnimatedSection>
-            <h2>Our Approach</h2>
-            <p>A simple, structured process to help students improve.</p>
+            <div className="challenge-header">
+              <h2>The Core Challenge</h2>
+            </div>
           </AnimatedSection>
 
-          <div className="journey-grid">
-            <div className="journey-line" />
-            {approachSteps.map((step, i) => (
-              <AnimatedSection key={i} delay={i * 150}>
-                <div className="journey-step">
-                  <div className="journey-dot-wrapper editorial-shadow ghost-border">
-                    <div className="journey-dot" />
-                    {step.pulse && <div className="journey-pulse" />}
+          <div className="challenge-grid">
+            <AnimatedSection delay={100}>
+              <div className="challenge-card">
+                <div className="challenge-icon">
+                  <span className="material-symbols-outlined">school</span>
+                </div>
+                <h3>Students graduate with:</h3>
+                <ul>
+                  <li>Strong academic foundations</li>
+                  <li>Technical understanding</li>
+                  <li>Problem-solving ability</li>
+                </ul>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={200}>
+              <div className="challenge-card">
+                <div className="challenge-icon">
+                  <span className="material-symbols-outlined">work</span>
+                </div>
+                <h3>However, hiring processes assess:</h3>
+                <ul>
+                  <li>Clarity of communication</li>
+                  <li>Structure of responses</li>
+                  <li>Ability to think and articulate under pressure</li>
+                </ul>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection delay={300}>
+            <div className="challenge-conclusion">
+              <p>This creates a disconnect between preparation and performance.</p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={400}>
+            <div className="challenge-additional">
+              <h3>In addition:</h3>
+              <div className="additional-grid">
+                <div className="additional-item">
+                  <span className="material-symbols-outlined">visibility_off</span>
+                  <p>Interview exposure is limited</p>
+                </div>
+                <div className="additional-item">
+                  <span className="material-symbols-outlined">sync_problem</span>
+                  <p>Practice opportunities are inconsistent</p>
+                </div>
+                <div className="additional-item">
+                  <span className="material-symbols-outlined">feedback</span>
+                  <p>Feedback is often generic or unavailable</p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={500}>
+            <div className="challenge-result">
+              <p>As a result, many capable students underperform during interviews.</p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── The Approach ── */}
+      <section className="about-approach">
+        <div className="container">
+          <AnimatedSection>
+            <div className="approach-header">
+              <h2>THE APPROACH</h2>
+              <p className="approach-intro">
+                Aarovan.ai is built on the premise that communication can be systematically developed.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={100}>
+            <div className="approach-intro-text">
+              <p>It introduces a structured system where:</p>
+            </div>
+          </AnimatedSection>
+
+          <div className="approach-grid">
+            <AnimatedSection delay={200}>
+              <div className="approach-card">
+                <div className="approach-icon">
+                  <span className="material-symbols-outlined">autorenew</span>
+                </div>
+                <h3>Practice is continuous</h3>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={250}>
+              <div className="approach-card">
+                <div className="approach-icon">
+                  <span className="material-symbols-outlined">balance</span>
+                </div>
+                <h3>Evaluation is objective</h3>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={300}>
+              <div className="approach-card">
+                <div className="approach-icon">
+                  <span className="material-symbols-outlined">feedback</span>
+                </div>
+                <h3>Feedback is actionable</h3>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={350}>
+              <div className="approach-card">
+                <div className="approach-icon">
+                  <span className="material-symbols-outlined">trending_up</span>
+                </div>
+                <h3>Improvement is measurable</h3>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection delay={400}>
+            <div className="approach-conclusion">
+              <p>
+                Over time, this transforms how students approach interviews — from one-time events to repeatable skills.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── What This Enables ── */}
+      <section className="about-enables">
+        <div className="container">
+          <AnimatedSection>
+            <div className="enables-header">
+              <h2>WHAT THIS ENABLES</h2>
+            </div>
+          </AnimatedSection>
+
+          <div className="enables-grid">
+            <AnimatedSection delay={100}>
+              <div className="enables-card">
+                <div className="enables-card-header">
+                  <div className="enables-icon">
+                    <span className="material-symbols-outlined">person</span>
                   </div>
-                  <h3>{step.title}</h3>
-                  <p>{step.desc}</p>
+                  <h3>For Students</h3>
                 </div>
-              </AnimatedSection>
-            ))}
+                <ul>
+                  <li>Improved clarity and structure in communication</li>
+                  <li>Increased confidence through repetition</li>
+                  <li>Better performance under interview conditions</li>
+                </ul>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={200}>
+              <div className="enables-card">
+                <div className="enables-card-header">
+                  <div className="enables-icon">
+                    <span className="material-symbols-outlined">apartment</span>
+                  </div>
+                  <h3>For Institutions</h3>
+                </div>
+                <ul>
+                  <li>Scalable interview preparation across large cohorts</li>
+                  <li>Standardized evaluation frameworks</li>
+                  <li>Visibility into student readiness and improvement</li>
+                </ul>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* ── Built For ── */}
-      <section className="about-mission">
+      {/* ── Proof ── */}
+      <section className="about-proof">
         <div className="container">
           <AnimatedSection>
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <h2>Built for Students and Colleges</h2>
-              <p>Aarovan.ai is designed to help:</p>
+            <div className="proof-header">
+              <h2>PROOF</h2>
             </div>
           </AnimatedSection>
-          <div className="about-mission-grid">
-            <AnimatedSection direction="left">
-              <div className="mission-side-card ghost-border" style={{ padding: '2rem' }}>
-                <span className="material-symbols-outlined" style={{ fontSize: '3rem', color: 'var(--accent-orange)', marginBottom: '1rem' }}>school</span>
-                <h3>Students</h3>
-                <p>Become placement-ready through structured practice and feedback.</p>
+
+          <div className="proof-items">
+            <AnimatedSection delay={100}>
+              <div className="proof-item">
+                <div className="proof-item-icon">
+                  <span className="material-symbols-outlined">science</span>
+                </div>
+                <p>Developed and tested through pilot programs</p>
               </div>
             </AnimatedSection>
-            <AnimatedSection direction="right" delay={200}>
-              <div className="mission-side-card ghost-border" style={{ padding: '2rem' }}>
-                <span className="material-symbols-outlined" style={{ fontSize: '3rem', color: 'var(--accent-orange)', marginBottom: '1rem' }}>analytics</span>
-                <h3>Colleges</h3>
-                <p>Track and improve student outcomes with clear insights.</p>
+
+            <AnimatedSection delay={200}>
+              <div className="proof-item">
+                <div className="proof-item-icon">
+                  <span className="material-symbols-outlined">group</span>
+                </div>
+                <p>Used by over <strong>500 students</strong></p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={300}>
+              <div className="proof-item">
+                <div className="proof-item-icon">
+                  <span className="material-symbols-outlined">trending_up</span>
+                </div>
+                <p>Demonstrating early improvements of <strong>40–50%</strong></p>
               </div>
             </AnimatedSection>
           </div>

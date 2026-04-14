@@ -1,20 +1,22 @@
 import AnimatedSection from '../components/AnimatedSection';
 import './Team.css';
+import rohanImage from '../assets/Picture2.jpg';
+import avennyaImage from '../assets/Picture1.jpg';
 
 const members = [
   {
     name: 'Rohan Garg',
-    role: 'Product Leader',
-    desc: "Product leader with 10+ years of experience across B2B SaaS and consumer technology products, with a strong focus on translating user needs into scalable solutions. He has led product development across data, ad-tech, and sports-tech, including scaling products from 0 to 1 and driving user growth.",
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5jz06hs4IuRMXbaKuatF7jrkLX_mHL9tonq9THpF5r7ws1KoF1FBLuFHUNG-v3yJA0XQXLF5OdHHw7dVOuOD-I0G2YQZwO264ElXtqLcTztz9Q_TqpQt-inxXQlOAoTjXB4pszbYli4yEU-4xDMYkDDcwJc5583wYtadaxepVwKfdCgPwtJDLVvZ5Vn1isJDqDqeJDpLBD4IQxA4pKFbkVCZOKJGvZb6V3gB2G-UbM8eGd-YHCFWMgLE3gpHBhKnya8itoupc0dY',
+    role: 'Co-Founder',
+    desc: "Product leader with 10+ years of experience across India and the US, spanning product management and data analytics. At Dream11 and PokerBaazi, built growth and retention products at scale for ~20M daily active users. Previously at Publicis Media and comScore, developed data platforms and visualization tools for global ad agencies. MBA from ISB, MMS from Duke University, and an engineering degree from NIT Kurukshetra.",
+    img: rohanImage,
     icon: 'code',
     badgeBg: 'rgba(233, 232, 232, 0.8)',
   },
   {
     name: 'Avennya Goel',
-    role: 'Financial Analyst',
-    desc: 'Financial Analyst with experience across analytics, and AI-enabled platforms, with a strong focus on data-driven decision-making and performance evaluation. She has worked across consulting, fintech, and SaaS environments, contributing to financial modelling, strategy, and operational planning.',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuATmWcMU6C7XCSzKLD2lckgD2xCZ-e5US1tY29C3nH5d0-YguWc016e-_S7VL397P0lrQ66Jnc6KvI-wKFwztpvcmjvtJaKlAJcb4nRBmU0CdZfDRQzA5zPUZtvKzagaxqJ2RfJ8PkiGtUz4TpdlXVxgka5L_7skNLRq2a3TdaH8zCVLiFcZN9_WA5SF39hRtn2ZwOEE6TNHPJRhZpLvmMjKxC2JbPHNojqpXnJ4QL4kN2SrLJOaLE-xWQCqtqz2rr8TmgNURTQfvw',
+    role: 'Co-Founder',
+    desc: 'Finance professional with 4+ years of experience across analytics, financial strategy, and AI-enabled platforms. Worked at Deloitte on financial analysis, reporting automation, and performance evaluation across large-scale systems, and at Mercor on financial modelling within AI-driven workflows. MBA in Quantitative Finance and Entrepreneurship from Babson College, focused on building data-driven systems that measure performance, identify gaps, and drive measurable outcome.',
+    img: avennyaImage,
     icon: 'psychology',
     badgeBg: 'rgba(176, 205, 190, 0.8)',
   },
@@ -27,8 +29,7 @@ export default function Team() {
       <section className="team-hero">
         <div className="container">
           <AnimatedSection>
-            <h1>Meet the Team</h1>
-            <p>Built by a team combining expertise in AI, product, and education. We are dedicated to redefining how engineering excellence is nurtured.</p>
+            <h1>Focused on Building Outcome-Driven Systems</h1>
           </AnimatedSection>
         </div>
       </section>
@@ -37,13 +38,14 @@ export default function Team() {
       <section className="team-grid-section">
         <div className="container">
           <div className="team-bento">
-            {/* Philosophy */}
+            {/* Mentorship */}
             <AnimatedSection className="t-col-12" delay={0}>
-              <div className="team-philosophy-card">
+              <div className="team-mentorship-card">
                 <div className="blur-circle" />
                 <span className="material-symbols-outlined">school</span>
-                <h3>Our Team</h3>
-                <p>A small team focused on solving one problem: helping students become confident and interview-ready.</p>
+                <h3>Mentorship</h3>
+                <p className="mentorship-subtitle">Built with guidance from renowned AI faculty</p>
+                <p>Aarovan.ai is guided by mentorship from NYU Tandon School of Engineering. This mentorship combines academic expertise with real-world execution.</p>
               </div>
             </AnimatedSection>
 
@@ -73,20 +75,10 @@ export default function Team() {
       <section className="team-progress">
         <div className="container">
           <AnimatedSection>
-            <div className="team-progress-inner">
-              <div className="team-progress-text">
-                <h3>The Aarovan Standard</h3>
-                <p>Our engineering team is developing ultra-precision AI analysis tools for the next generation of interviews.</p>
-              </div>
-              <div className="team-progress-bar">
-                <div className="thread-track">
-                  <div className="thread-fill" style={{ width: '66%' }} />
-                </div>
-                <div className="thread-labels">
-                  <span>Analysis Engine</span>
-                  <span>68% Deployment</span>
-                </div>
-              </div>
+            <div className="team-validation">
+              <h3>Built through real-world validation and continuous iteration</h3>
+              <p>Aarovan.ai has been developed through direct engagement with students and institutions, grounded in real pilot programs and feedback loops.</p>
+              <p>The team brings together experience across analytics, product, and AI-enabled systems — with a shared focus on solving one of the most overlooked challenges in employability: how students communicate what they know.</p>
             </div>
           </AnimatedSection>
         </div>
