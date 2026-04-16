@@ -113,7 +113,7 @@ export default function About() {
 <AnimatedSection as="section" className="bg-surface-container-low py-32">
 <div className="max-w-7xl mx-auto px-8">
 <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
-<div className="sticky top-32">
+<div className="md:sticky md:top-32 md:z-10">
 <h2 className="font-headline text-4xl text-primary mb-6">The Approach</h2>
 <div className="w-20 h-1 bg-primary-container mb-8"></div>
 <p className="text-on-surface-variant leading-loose mb-6">

@@ -24,10 +24,17 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
     if (!mobileOpen) return;
-    const raf = requestAnimationFrame(() => setMobileOpen(false));
-    return () => cancelAnimationFrame(raf);
-  }, [location.pathname, mobileOpen]);
+    const handleResize = () => {
+      if (window.innerWidth > 768) setMobileOpen(false);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileOpen]);
 
   const logoSrc = isDark ? '/logo_light.png' : '/logo.png';
 

@@ -1,8 +1,43 @@
+import { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
 import { Link } from "react-router-dom";
 import contactImage from "../assets/contact.jpg";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    partnershipType: "University Placement Cell",
+    message: ""
+  });
+  const [status, setStatus] = useState("idle");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+    
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+      
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", partnershipType: "University Placement Cell", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
   return (
     <>
       <main className="pt-24">
@@ -34,20 +69,20 @@ export default function Contact() {
 <div className="lg:col-span-7">
 <div className="bg-surface-container-lowest p-10 md:p-12 rounded-xl editorial-shadow">
 <h2 className="font-headline text-3xl font-bold text-primary mb-10">Send an Inquiry</h2>
-<form className="space-y-8">
+<form className="space-y-8" onSubmit={handleSubmit}>
 <div className="grid md:grid-cols-2 gap-8">
 <div className="space-y-2">
 <label className="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Full Name</label>
-<input className="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 focus:ring-1 focus:ring-primary-fixed-dim transition-all outline-none" placeholder="John Doe" type="text"/>
+<input className="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 focus:ring-1 focus:ring-primary-fixed-dim transition-all outline-none" placeholder="John Doe" type="text" name="name" value={formData.name} onChange={handleChange} required/>
 </div>
 <div className="space-y-2">
 <label className="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Institution Email</label>
-<input className="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 focus:ring-1 focus:ring-primary-fixed-dim transition-all outline-none" placeholder="dean@university.edu" type="email"/>
+<input className="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 focus:ring-1 focus:ring-primary-fixed-dim transition-all outline-none" placeholder="dean@university.edu" type="email" name="email" value={formData.email} onChange={handleChange} required/>
 </div>
 </div>
 <div className="space-y-2">
 <label className="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Partnership Type</label>
-<select className="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 focus:ring-1 focus:ring-primary-fixed-dim transition-all outline-none appearance-none">
+<select className="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 focus:ring-1 focus:ring-primary-fixed-dim transition-all outline-none appearance-none" name="partnershipType" value={formData.partnershipType} onChange={handleChange}>
 <option>University Placement Cell</option>
 <option>Technical Bootcamp</option>
 <option>Corporate Training</option>
@@ -56,11 +91,13 @@ export default function Contact() {
 </div>
 <div className="space-y-2">
 <label className="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Message</label>
-<textarea className="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 focus:ring-1 focus:ring-primary-fixed-dim transition-all outline-none" placeholder="How can we help your students excel?" rows="5"></textarea>
+<textarea className="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 focus:ring-1 focus:ring-primary-fixed-dim transition-all outline-none" placeholder="How can we help your students excel?" rows="5" name="message" value={formData.message} onChange={handleChange} required></textarea>
 </div>
-<button className="w-full primary-gradient text-white font-bold py-5 rounded-lg label-md uppercase tracking-[0.05em] shadow-lg hover:shadow-xl transition-all">
-                                Send Message
-                            </button>
+<button className="w-full primary-gradient text-white font-bold py-5 rounded-lg label-md uppercase tracking-[0.05em] shadow-lg hover:shadow-xl transition-all" disabled={status === "loading"}>
+{status === "loading" ? "Sending..." : "Send Message"}
+</button>
+{status === "success" && <p className="text-green-600 font-medium text-center">Message sent successfully!</p>}
+{status === "error" && <p className="text-red-600 font-medium text-center">Failed to send message. Please try again.</p>}
 </form>
 </div>
 </div>
